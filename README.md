@@ -1,5 +1,5 @@
-# PhoneNumberVerifier
-To help implement phone number verification before performing any further operation.
+# PhoneNumberValidator
+To help implement phone number validation before performing any further operation.
 Convert phone number to phone number with country code and also remove country code 
 from a phone number and automatically get the country of a user. 
 This library helps make sure the number is valid for the selected country.
