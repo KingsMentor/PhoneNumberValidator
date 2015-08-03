@@ -38,6 +38,7 @@ TelephonyManager telephonyManager = (TelephonyManager)context.getSystemService(C
 String simOperator = telephonyManager.getSimOperator();
 if (!simOperator.isEmpty()) {
 int mcc = Integer.parseInt(String.valueOf(context.getResources().getConfiguration().mcc));
+}
 ```
 
 * phone number
