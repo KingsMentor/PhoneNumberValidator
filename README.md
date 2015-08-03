@@ -74,7 +74,7 @@ calling the country by its value type;
 To check if a number is valid for a country, use the phoneModel class.
 
 ```
-PhoneModel model = country.isNumberValid(country, "08039164129");
+PhoneModel model = country.isNumberValid(country, "08012345678");
 ```
 
 ```model.isNumberValid()``` tells if the number is valid or not. If it is 
