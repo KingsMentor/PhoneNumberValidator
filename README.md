@@ -4,6 +4,10 @@ Convert phone number to phone number with country code and also remove country c
 from a phone number and automatically get the country of a user. 
 This library helps make sure the number is valid for the selected country.
 
+[![](https://jitpack.io/v/KingsMentor/PhoneNumberValidator.svg)](https://jitpack.io/#KingsMentor/PhoneNumberValidator)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PhoneNumberValidator-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/4416)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+
 # Adding to your project.
 Download the project and add the phonenumberverifier as a module on android studio as a dependency
 
@@ -90,6 +94,26 @@ use ```country.ToPlainNumber(country,phonenumber)``` and ```country.ToCountryCod
 
 #Handling Exception
 Watch out for the PhoneFormatException. It is thrown when phone contains invalid characters mainly.
+
+
+## License
+
+```
+Copyright (C) 2016 Roman Nurik
+Copyright (C) 2016 Kizito Nwose
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
 
 
 
