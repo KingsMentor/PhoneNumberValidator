@@ -99,9 +99,6 @@ Watch out for the PhoneFormatException. It is thrown when phone contains invalid
 ## License
 
 ```
-Copyright (C) 2016 Roman Nurik
-Copyright (C) 2016 Kizito Nwose
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
