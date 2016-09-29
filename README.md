@@ -9,7 +9,7 @@ This library helps make sure the number is valid for the selected country.
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Adding to your project.
-compile 'com.github.KingsMentor:PhoneNumberValidator:-SNAPSHOT'
+```compile 'com.github.KingsMentor:PhoneNumberValidator:-SNAPSHOT'```
 
 #Samples
 See sample application in project for a brief walk through on how to use the library.
