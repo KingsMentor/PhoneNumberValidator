@@ -15,57 +15,62 @@ public class PhoneNumberVerifier {
     public enum Countries {
 
 
-        Benin(229, 8, 8, "0", 616),
-        BurkinaFaso(226, 8, 8, "0", 613),
-        CapeVerde(238, 7, 7, "0", 614),
-        Cameroon(237, 8, 8, "0", 302, 307),
-        Canada(1, 10, 10, "0,1", 460),
-        China(86, 11, 11, "0", 612),
-        CoteDIvoire(225, 8, 8, "", 602),
-        Egypt(20, 9, 10, "0", 625),
-        Finland(358, 6, 11, "0", 224),
-        France(33, 9, 9, "0", 208),
-        Gambia(220, 7, 7, "0", 607),
-        Germany(49, 7, 12, "0", 262),
-        Ghana(233, 9, 9, "0", 620),
-        Greece(30, 10, 10, "0", 202),
-        GuineaBissau(245, 7, 7, "0", 632),
-        Guinea(224, 8, 9, "0", 611),
-        India(91, 10, 10, "0", 404, 405),
-        Italy(39, 9, 10, "0", 222),
-        Japan(81, 10, 10, "0", 440, 441),
-        Kenya(254, 9, 9, "0", 639),
-        Liberia(231, 7, 9, "0", 618),
-        Libya(218, 9, 9, "0", 606),
-        Malawi(265, 9, 9, "0", 650),
-        Malaysia(60, 9, 10, "0", 502),
-        Mali(223, 8, 8, "0", 610),
-        Mauritania(222, 8, 8, "0", 609),
-        Morocco(212, 9, 9, "0", 604),
-        Niger(227, 8, 8, "0", 614),
-        Nigeria(234, 10, 10, "0", 621),
-        NorthKorea(850, 10, 10, "0", 467),
-        Russia(7, 10, 10, "8", 250),
-        SaudiArabia(966, 9, 9, "0", 420),
-        Senegal(221, 9, 9, "0", 608),
-        SierraLeone(232, 8, 8, "0", 619),
-        SouthAfrica(27, 9, 9, "0", 655),
-        SouthKorea(82, 9, 10, "0", 450),
-        Spain(34, 9, 9, "0", 214),
-        Sweden(46, 9, 9, "0", 240),
-        Switzerland(41, 9, 9, "0", 228),
-        Togo(228, 8, 8, "0", 615),
-        Ukraine(380, 9, 9, "0", 225),
-        UnitedArabEmirate(971, 10, 10, "0", 424, 430, 431),
-        UnitedKingdom(44, 10, 10, "0,1", 234, 235),
-        UnitedStates(1, 10, 10, "0,1", 301);
+        Benin("Benin Republic", 229, 8, 8, "0", 616),
+        BurkinaFaso("Burkina Faso", 226, 8, 8, "0", 613),
+        CapeVerde("Cape Verce", 238, 7, 7, "0", 614),
+        Cameroon("Cameroon", 237, 8, 8, "0", 302, 307),
+        Canada("Canada,", 1, 10, 10, "0,1", 460),
+        China("China", 86, 11, 11, "0", 612),
+        CoteDIvoire("Cote d'Ivoire", 225, 8, 8, "", 602),
+        Egypt("Egpyt", 20, 9, 10, "0", 625),
+        Finland("Finland", 358, 6, 11, "0", 224),
+        France("France", 33, 9, 9, "0", 208),
+        Gambia("Gambia", 220, 7, 7, "0", 607),
+        Germany("Germany", 49, 7, 12, "0", 262),
+        Ghana("Ghana", 233, 9, 9, "0", 620),
+        Greece("Greece", 30, 10, 10, "0", 202),
+        GuineaBissau("Guinea Bissau", 245, 7, 7, "0", 632),
+        Guinea("Guinea", 224, 8, 9, "0", 611),
+        India("India", 91, 10, 10, "0", 404, 405),
+        Italy("Italy", 39, 9, 10, "0", 222),
+        Japan("Japan", 81, 10, 10, "0", 440, 441),
+        Kenya("Kenya", 254, 9, 9, "0", 639),
+        Liberia("Liberia", 231, 7, 9, "0", 618),
+        Libya("Libya", 218, 9, 9, "0", 606),
+        Malawi("Malawi", 265, 9, 9, "0", 650),
+        Malaysia("Malaysia", 60, 9, 10, "0", 502),
+        Mali("Mali", 223, 8, 8, "0", 610),
+        Mauritania("Mauritania", 222, 8, 8, "0", 609),
+        Morocco("Morocco", 212, 9, 9, "0", 604),
+        Niger("Niger", 227, 8, 8, "0", 614),
+        Nigeria("Nigeria", 234, 10, 10, "0", 621),
+        NorthKorea("North Korea", 850, 10, 10, "0", 467),
+        Russia("Russia", 7, 10, 10, "8", 250),
+        SaudiArabia("Saudi Arabia", 966, 9, 9, "0", 420),
+        Senegal("Senegal", 221, 9, 9, "0", 608),
+        SierraLeone("Sierra Leone", 232, 8, 8, "0", 619),
+        SouthAfrica("South Africa", 27, 9, 9, "0", 655),
+        SouthKorea("South Korea", 82, 9, 10, "0", 450),
+        Spain("Spain", 34, 9, 9, "0", 214),
+        Sweden("Sweden", 46, 9, 9, "0", 240),
+        Switzerland("Switzerland", 41, 9, 9, "0", 228),
+        Togo("Togo", 228, 8, 8, "0", 615),
+        Ukraine("Ukraine", 380, 9, 9, "0", 225),
+        UnitedArabEmirate("United Arab Emirate", 971, 10, 10, "0", 424, 430, 431),
+        UnitedKingdom("United Kingdom", 44, 10, 10, "0,1", 234, 235),
+        UnitedStates("United States", 1, 10, 10, "0,1", 301);
 
         private final int countryCode;
+        private final String countryName;
         private final int allowableFromLength;
         private final int allowableToLength;
         private final String startDigitToIgnore;
         private final List<Integer> mcc;
         private String preceeding = "";
+
+        public String getCountryName() {
+            return this.countryName;
+        }
 
         public int getCountryCode() {
             return countryCode;
@@ -222,8 +227,9 @@ public class PhoneNumberVerifier {
             return phoneNumber;
         }
 
-        private Countries(int countryCode, int allowableFromLength, int allowableToLength, String startDigitToIgnore, Integer... mcc) {
+        private Countries(String countryName, int countryCode, int allowableFromLength, int allowableToLength, String startDigitToIgnore, Integer... mcc) {
             this.countryCode = countryCode;
+            this.countryName = countryName;
             this.allowableFromLength = allowableFromLength;
             this.allowableToLength = allowableToLength;
             this.startDigitToIgnore = startDigitToIgnore;
@@ -250,7 +256,7 @@ public class PhoneNumberVerifier {
     }
 
     /**
-     *Get country by valid phone number of the country
+     * Get country by valid phone number of the country
      */
     public Countries getCountryByPhoneNumber(Countries defaultCountry, String phoneNumber) throws PhoneFormatException {
         for (Countries c : Countries.values()) {

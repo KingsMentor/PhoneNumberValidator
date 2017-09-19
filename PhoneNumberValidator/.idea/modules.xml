@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PhoneNumberVerfication.iml" filepath="$PROJECT_DIR$/PhoneNumberVerfication.iml" />
-      <module fileurl="file://$PROJECT_DIR$/phonenumberverifier/PhoneNumberVerifierLibrary.iml" filepath="$PROJECT_DIR$/phonenumberverifier/PhoneNumberVerifierLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PhoneNumberValidator.iml" filepath="$PROJECT_DIR$/PhoneNumberValidator.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/phonenumberverifier/phonenumberverifier.iml" filepath="$PROJECT_DIR$/phonenumberverifier/phonenumberverifier.iml" />
     </modules>
   </component>
 </project>
