@@ -16,12 +16,12 @@ import android.widget.TextView;
 import appzonegroup.com.phonenumberverifier.PhoneFormatException;
 import appzonegroup.com.phonenumberverifier.PhoneModel;
 import appzonegroup.com.phonenumberverifier.PhoneNumberVerifier;
-import appzonegroup.com.phonenumberverifier.PhoneNumberVerifier.Countries;
+import appzonegroup.com.phonenumberverifier.PhoneNumberVerifier.Country;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    Countries country;
+    Country country;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +32,16 @@ public class MainActivity extends AppCompatActivity {
         final TextView textView = (TextView) findViewById(R.id.countryCode);
         final TextView outputTextView = (TextView) findViewById(R.id.output);
         final EditText editText = (EditText) findViewById(R.id.phonenumber);
-        final RadioButton toCCNumber = (RadioButton)findViewById(R.id.countryCodeNumber);
+        final RadioButton toCCNumber = (RadioButton) findViewById(R.id.countryCodeNumber);
 
-        ArrayAdapter<Countries> arrayAdapter = new ArrayAdapter<Countries>(MainActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, Countries.values());
+        ArrayAdapter<Country> arrayAdapter = new ArrayAdapter<Country>(MainActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, Country.values());
         spinner.setAdapter(arrayAdapter);
         PhoneNumberVerifier verifier = new PhoneNumberVerifier();
         country = verifier.getUserCountry(MainActivity.this);
         int index = 0;
         if (country != null) {
 
-            for (Countries c : Countries.values()) {
+            for (Country c : Country.values()) {
                 if (c == country) {
                     break;
                 }
@@ -59,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     String number = editText.getText().toString();
                     try {
-                        PhoneModel phoneModel = country.isNumberValid(country, number);
+                        PhoneModel phoneModel = country.isNumberValid(number);
                         if (phoneModel.isValidPhoneNumber()) {
-                            if (toCCNumber.isChecked()){
-                                 number = country.ToCountryCode(country,phoneModel.getPhoneNumber());
-                            }else{
-                                number = country.ToPlainNumber(country, phoneModel.getPhoneNumber());
+                            if (toCCNumber.isChecked()) {
+                                number = country.toPlainNumber(phoneModel.getPhoneNumber());
+                            } else {
+                                number = country.toCountryCode(phoneModel.getPhoneNumber());
                             }
                             outputTextView.setText(number);
                         } else {
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                country = Countries.values()[i];
+                country = Country.values()[i];
                 textView.setText("+" + country.getCountryCode());
             }
 

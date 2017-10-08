@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class PhoneNumberVerifier {
 
-    public enum Countries {
+    public enum Country {
 
 
         Benin("Benin Republic", 229, 8, 8, "0", 616),
@@ -116,11 +116,12 @@ public class PhoneNumberVerifier {
             return phoneNumber.matches("[+]" + buildreg + "[0-9]+");
         }
 
-        private boolean meetCountryPhoneNumberRequirement(Countries countries, String phoneNumber) {
+        private boolean meetCountryPhoneNumberRequirement(Country countries, String phoneNumber) {
             return ((phoneNumber.length() >= countries.getAllowableFromLength()) && (phoneNumber.length() <= countries.getAllowableToLength()));
         }
 
-        public PhoneModel isNumberValid(Countries countries, String phoneNumber) throws PhoneFormatException {
+
+        private PhoneModel isNumberValid(Country countries, String phoneNumber) throws PhoneFormatException {
             PhoneModel model = new PhoneModel();
             phoneNumber = phoneNumber.trim();
             if (startWithPlusAndCountryCode(String.valueOf(countries.getCountryCode()), phoneNumber)) {
@@ -167,19 +168,23 @@ public class PhoneNumberVerifier {
             return model;
         }
 
-        public String ToCountryCode(Countries countries, String phoneNumber) throws PhoneFormatException {
+        public PhoneModel isNumberValid(String phoneNumber) throws PhoneFormatException {
+            return isNumberValid(this, phoneNumber);
+        }
+
+        public String toCountryCode(String phoneNumber) throws PhoneFormatException {
             PhoneModel model = null;
             phoneNumber = phoneNumber.trim();
             phoneNumber = phoneNumber.trim();
             if (startWithPlus(phoneNumber)) {
-                if (startWithPlusAndCountryCode(String.valueOf(countries.getCountryCode()), phoneNumber)) {
-                    model = isNumberValid(countries, phoneNumber);
+                if (startWithPlusAndCountryCode(String.valueOf(getCountryCode()), phoneNumber)) {
+                    model = isNumberValid(this, phoneNumber);
                 }
-            } else if (startWithCountryCode(String.valueOf(countries.getCountryCode()), phoneNumber)) {
-                model = isNumberValid(countries, phoneNumber);
+            } else if (startWithCountryCode(String.valueOf(getCountryCode()), phoneNumber)) {
+                model = isNumberValid(this, phoneNumber);
             } else {
-                phoneNumber = "+" + String.valueOf(countries.getCountryCode()) + phoneNumber;
-                model = isNumberValid(countries, phoneNumber);
+                phoneNumber = "+" + String.valueOf(getCountryCode()) + phoneNumber;
+                model = isNumberValid(this, phoneNumber);
 
             }
             if (model != null) {
@@ -190,21 +195,21 @@ public class PhoneNumberVerifier {
             return "";
         }
 
-        public String ToPlainNumber(Countries countries, String phoneNumber) throws PhoneFormatException {
+        public String toPlainNumber(String phoneNumber) throws PhoneFormatException {
             PhoneModel model = null;
             phoneNumber = phoneNumber.trim();
-            if (startWithPlusAndCountryCode(String.valueOf(countries.getCountryCode()), phoneNumber)) {
-                String cc = String.valueOf(countries.getCountryCode());
+            if (startWithPlusAndCountryCode(String.valueOf(getCountryCode()), phoneNumber)) {
+                String cc = String.valueOf(getCountryCode());
                 phoneNumber = phoneNumber.substring(cc.length() + 1);
-                model = isNumberValid(countries, phoneNumber);
-            } else if (startWithCountryCode(String.valueOf(countries.getCountryCode()), phoneNumber)) {
-                String cc = String.valueOf(countries.getCountryCode());
+                model = isNumberValid(this, phoneNumber);
+            } else if (startWithCountryCode(String.valueOf(getCountryCode()), phoneNumber)) {
+                String cc = String.valueOf(getCountryCode());
                 phoneNumber = phoneNumber.substring(cc.length());
-                model = isNumberValid(countries, phoneNumber);
+                model = isNumberValid(this, phoneNumber);
             } else {
-                phoneNumber = formatNumber(countries, phoneNumber);
+                phoneNumber = formatNumber(this, phoneNumber);
                 phoneNumber = preceeding + phoneNumber;
-                model = isNumberValid(countries, phoneNumber);
+                model = isNumberValid(this, phoneNumber);
             }
             if (model != null) {
                 if (model.isValidPhoneNumber()) {
@@ -214,7 +219,7 @@ public class PhoneNumberVerifier {
             return "";
         }
 
-        private String formatNumber(Countries countries, String phoneNumber) {
+        private String formatNumber(Country countries, String phoneNumber) {
             ArrayList<String> preceedingDigit = new ArrayList<>(Arrays.asList(countries.getStartDigitToIgnore().split(",")));
             while (!phoneNumber.trim().isEmpty()) {
                 if (preceedingDigit.contains(phoneNumber.substring(0, 1))) {
@@ -227,7 +232,7 @@ public class PhoneNumberVerifier {
             return phoneNumber;
         }
 
-        private Countries(String countryName, int countryCode, int allowableFromLength, int allowableToLength, String startDigitToIgnore, Integer... mcc) {
+        private Country(String countryName, int countryCode, int allowableFromLength, int allowableToLength, String startDigitToIgnore, Integer... mcc) {
             this.countryCode = countryCode;
             this.countryName = countryName;
             this.allowableFromLength = allowableFromLength;
@@ -239,15 +244,14 @@ public class PhoneNumberVerifier {
 
     }
 
-    ;
 
-    private ArrayList<Countries> countriesList;
+    private ArrayList<Country> countriesList;
 
     /**
      * Get country by name of country
      */
-    public Countries getCountryByName(String countries) {
-        for (Countries c : Countries.values()) {
+    public Country getCountryByName(String countries) {
+        for (Country c : Country.values()) {
             if (String.valueOf(c).equalsIgnoreCase(countries)) {
                 return c;
             }
@@ -258,8 +262,8 @@ public class PhoneNumberVerifier {
     /**
      * Get country by valid phone number of the country
      */
-    public Countries getCountryByPhoneNumber(Countries defaultCountry, String phoneNumber) throws PhoneFormatException {
-        for (Countries c : Countries.values()) {
+    public Country getCountryByPhoneNumber(Country defaultCountry, String phoneNumber) throws PhoneFormatException {
+        for (Country c : Country.values()) {
             if (c.startWithCountryCode(String.valueOf(c.getCountryCode()), phoneNumber)) {
                 PhoneModel model = c.isNumberValid(c, phoneNumber);
                 if (model.isValidPhoneNumber()) {
@@ -279,8 +283,8 @@ public class PhoneNumberVerifier {
     /**
      * Get country by Mobile country codes
      */
-    public Countries getCountryByMcc(int mcc) {
-        for (Countries countries : Countries.values()) {
+    public Country getCountryByMcc(int mcc) {
+        for (Country countries : Country.values()) {
             if (countries.mcc.contains(mcc)) {
                 return countries;
             }
@@ -293,9 +297,9 @@ public class PhoneNumberVerifier {
      * This returns the list of countries because countries like Canada and US
      * has same country code
      */
-    public ArrayList<Countries> getCountriesByCountryCode(int countryCode) {
+    public ArrayList<Country> getCountriesByCountryCode(int countryCode) {
         countriesList = new ArrayList<>();
-        for (Countries countries : Countries.values()) {
+        for (Country countries : Country.values()) {
             if (countries.countryCode == countryCode) {
                 countriesList.add(countries);
             }
@@ -306,7 +310,7 @@ public class PhoneNumberVerifier {
     /**
      * Get country of the user.
      */
-    public Countries getUserCountry(Context context) {
+    public Country getUserCountry(Context context) {
         TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         String simOperator = telephonyManager.getSimOperator();
         if (!simOperator.isEmpty()) {
