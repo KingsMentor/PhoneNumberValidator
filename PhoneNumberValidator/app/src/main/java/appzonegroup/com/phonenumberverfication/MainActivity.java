@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
                         PhoneModel phoneModel = country.isNumberValid(number);
                         if (phoneModel.isValidPhoneNumber()) {
                             if (toCCNumber.isChecked()) {
-                                number = country.toPlainNumber(phoneModel.getPhoneNumber());
-                            } else {
                                 number = country.toCountryCode(phoneModel.getPhoneNumber());
+                            } else {
+                                number = country.toPlainNumber(phoneModel.getPhoneNumber());
                             }
                             outputTextView.setText(number);
                         } else {
