@@ -1,1 +1,1 @@
-include ':app', ':phonenumberverifier'
+include ':app', ':phonenumbervalidator'

@@ -1,4 +1,4 @@
-package appzonegroup.com.phonenumberverifier;
+package com.belvi.validator;
 
 import android.content.Context;
 import android.telephony.TelephonyManager;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * CreatedbyCrowdStaron8/1/2015.
  */
-public class PhoneNumberVerifier {
+public class PhoneNumberValidator {
 
     public enum Country {
 

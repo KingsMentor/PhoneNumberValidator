@@ -13,10 +13,10 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import appzonegroup.com.phonenumberverifier.PhoneFormatException;
-import appzonegroup.com.phonenumberverifier.PhoneModel;
-import appzonegroup.com.phonenumberverifier.PhoneNumberVerifier;
-import appzonegroup.com.phonenumberverifier.PhoneNumberVerifier.Country;
+import com.belvi.validator.PhoneFormatException;
+import com.belvi.validator.PhoneModel;
+import com.belvi.validator.PhoneNumberValidator;
+import com.belvi.validator.PhoneNumberValidator.Country;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<Country> arrayAdapter = new ArrayAdapter<Country>(MainActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, Country.values());
         spinner.setAdapter(arrayAdapter);
-        PhoneNumberVerifier verifier = new PhoneNumberVerifier();
+        PhoneNumberValidator verifier = new PhoneNumberValidator();
         country = verifier.getUserCountry(MainActivity.this);
         int index = 0;
         if (country != null) {
