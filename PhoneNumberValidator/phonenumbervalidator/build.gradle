@@ -18,18 +18,13 @@ android {
     }
 }
 
-dependencies {
-
-}
-
-
 
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'PhoneNumberValidator'
 
     publishedGroupId = 'com.belvi.validator'
-    libraryName = 'phonenumbervalidator'
+    libraryName = 'PhoneNumberValidator'
     artifact = 'phonenumbervalidator'
 
     libraryDescription = 'To help implement phone number verification before performing any further operation.'
