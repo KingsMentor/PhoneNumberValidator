@@ -86,6 +86,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/check-manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/intermediate-jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
@@ -104,15 +105,5 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="support-core-ui-26.0.2" level="project" />
-    <orderEntry type="library" name="appcompat-v7-26.0.2" level="project" />
-    <orderEntry type="library" name="support-compat-26.0.2" level="project" />
-    <orderEntry type="library" name="support-media-compat-26.0.2" level="project" />
-    <orderEntry type="library" name="animated-vector-drawable-26.0.2" level="project" />
-    <orderEntry type="library" name="support-fragment-26.0.2" level="project" />
-    <orderEntry type="library" name="support-annotations-26.0.2" level="project" />
-    <orderEntry type="library" name="support-vector-drawable-26.0.2" level="project" />
-    <orderEntry type="library" name="support-v4-26.0.2" level="project" />
-    <orderEntry type="library" name="support-core-utils-26.0.2" level="project" />
   </component>
 </module>

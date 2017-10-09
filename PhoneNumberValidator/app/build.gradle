@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
-        applicationId "appzonegroup.com.phonenumberverfication"
+        applicationId "com.belvi.phonenumbervalidatorsample"
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
@@ -21,6 +21,6 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:26.0.2'
+    compile 'com.android.support:appcompat-v7:26.1.0'
     compile project(':phonenumbervalidator')
 }

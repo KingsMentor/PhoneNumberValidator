@@ -2,10 +2,10 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 9
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -19,8 +19,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:26.0.2'
+
 }
 
 
@@ -35,10 +34,10 @@ ext {
 
     libraryDescription = 'To help implement phone number verification before performing any further operation.'
 
-    siteUrl = 'https://github.com/KingsMentor/BaseAuth'
-    gitUrl = 'https://github.com/KingsMentor/BaseAuth.git'
+    siteUrl = 'https://github.com/KingsMentor/PhoneNumberValidator'
+    gitUrl = 'https://github.com/KingsMentor/PhoneNumberValidator.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.0'
 
     developerId = 'kingsmentor'
     developerName = 'Nosakhare Belvi'
