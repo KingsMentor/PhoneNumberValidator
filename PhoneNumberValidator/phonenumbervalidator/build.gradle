@@ -23,7 +23,7 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'PhoneNumberValidator'
 
-    publishedGroupId = 'com.belvi.validator'
+    publishedGroupId = 'xyz.belvi.validator'
     libraryName = 'PhoneNumberValidator'
     artifact = 'phonenumbervalidator'
 
@@ -32,7 +32,7 @@ ext {
     siteUrl = 'https://github.com/KingsMentor/PhoneNumberValidator'
     gitUrl = 'https://github.com/KingsMentor/PhoneNumberValidator.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.3'
 
     developerId = 'kingsmentor'
     developerName = 'Nosakhare Belvi'

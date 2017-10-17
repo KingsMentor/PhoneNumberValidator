@@ -13,10 +13,10 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.belvi.validator.PhoneFormatException;
-import com.belvi.validator.PhoneModel;
-import com.belvi.validator.PhoneNumberValidator;
-import com.belvi.validator.PhoneNumberValidator.Country;
+import xyz.belvi.validator.PhoneFormatException;
+import xyz.belvi.validator.PhoneModel;
+import xyz.belvi.validator.PhoneNumberValidator;
+import xyz.belvi.validator.PhoneNumberValidator.Country;
 
 
 public class MainActivity extends AppCompatActivity {
