@@ -4,17 +4,17 @@ Convert phone number to phone number with country code and also remove country c
 from a phone number and automatically get the country of a user. 
 This library helps make sure the number is valid for the selected country.
 
-[![](https://jitpack.io/v/KingsMentor/PhoneNumberValidator.svg)](https://jitpack.io/#KingsMentor/PhoneNumberValidator)
+ [ ![Download](https://api.bintray.com/packages/kingsmentor/maven/PhoneNumberValidator/images/download.svg) ](https://bintray.com/kingsmentor/maven/PhoneNumberValidator/_latestVersion)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PhoneNumberValidator-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/4416)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Adding to your project.
-```compile 'com.github.KingsMentor:PhoneNumberValidator:-SNAPSHOT'```
+```compile 'xyz.belvi.validator:phonenumbervalidator:1.0.0'```
 
-#Samples
+# Samples
 See sample application in project for a brief walk through on how to use the library.
 
-#Snippet.
+# Snippet.
 ```PhoneNumberVerifier numberVerifier = new PhoneNumberVerifier();```
 
 **Countries can be gotten by:**
@@ -78,7 +78,7 @@ calling the country by its value type;
 To check if a number is valid for a country, use the phoneModel class.
 
 ```
-PhoneModel model = country.isNumberValid(country, "08012345678");
+PhoneModel model = country.isNumberValid("08012345678");
 ```
 
 ```model.isNumberValid()``` tells if the number is valid or not. If it is 
@@ -90,7 +90,7 @@ valid, you can basically a better formatted version of the number from
 Numbers can be converted to plain number from countrycode number and converted to plain number from counrtycode number
 (i.e) from 080231**** to +23481231**** or from +23481231**** to 080231****
 
-use ```country.ToPlainNumber(country,phonenumber)``` and ```country.ToCountryCodeNumber(country,phonenumber)``` to achieve this
+use ```country.toPlainNumber(phonenumber)``` and ```country.toCountryCodeNumber(phonenumber)``` to achieve this
 
 #Handling Exception
 Watch out for the PhoneFormatException. It is thrown when phone contains invalid characters mainly.
